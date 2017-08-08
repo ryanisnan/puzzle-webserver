@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from .views import LatestPuzzleAPIView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^s3direct/', include('s3direct.urls')),
+    url(r'^api/puzzles/latest/$', LatestPuzzleAPIView.as_view())
 ]
