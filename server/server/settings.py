@@ -119,3 +119,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# AWS S3 Settings - We pull from environment variables so we don't leak our data in our repostory
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', '')
+
+S3DIRECT_REGION = 'us-east-1'
+
+S3DIRECT_DESTINATIONS = {
+    'puzzles': {
+        'key': 'puzzles',
+    }
+}
