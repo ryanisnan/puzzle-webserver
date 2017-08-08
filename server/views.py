@@ -1,5 +1,5 @@
 from .models import Puzzle
-from django.core.views.generic import View
+from django.views.generic import View
 from django.http import HttpResponse
 from django.utils.timezone import now
 
